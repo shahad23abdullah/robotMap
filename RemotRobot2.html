@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+ 
+
+<html>
+<head>
+    
+    <title> Robot Remot </title> 
+	  
+    <link rel="icon" href= "https://cdn-icons-png.flaticon.com/512/1970/1970049.png" type = "image/x-icon"/>
+	
+	<link rel="stylesheet" href = "style.css"/>
+	
+ </head>
+ 
+ <body>
+
+ 
+  <div id = "divR">
+  
+   <canvas id="canvas" width="600" height="450" style=" "></canvas>
+       <script>
+         var canvas = document.getElementById('canvas'),
+          ctx = canvas.getContext('2d');
+          ctx.fillStyle='#F7F9F9';
+          ctx.fillRect(0,0,canvas.width,canvas.height);
+        </script>
+
+	    <script>
+		  let x = 0 ;
+		  let y = 0 ;
+		  
+         function RLine(){
+		if (x !=0 ){
+		      x= x+20;
+		      ctx.lineTo( x, y );
+		      ctx.stroke();}
+		else{
+		     ctx.beginPath();
+             ctx.moveTo(300, 200);
+             ctx.lineTo(320, 200);
+             ctx.stroke();
+		     x = 320 ; 
+		     y = 200 ;
+		 }
+		 }
+		   function LLine(){
+		 if (x !=0 ){
+		      x = x  - 20;
+		      ctx.lineTo( x, y );
+		      ctx.stroke();
+			  
+			  }
+		  else{
+		     ctx.beginPath();
+             ctx.moveTo(300, 200);
+             ctx.lineTo(280, 200);
+             ctx.stroke();
+		     x = 280 ; 
+		     y = 200 ;
+		 }
+		 }
+        function bLine(){
+		 if (x !=0 ){
+		      y = y  + 20;
+		      ctx.lineTo( x, y );
+		      ctx.stroke();}
+		  else{
+		     ctx.beginPath();
+             ctx.moveTo(300, 200);
+             ctx.lineTo(300, 220);
+             ctx.stroke();
+		     x = 300 ; 
+		     y = 220 ;
+		 }
+		 }
+         function fLine(){
+		 if (x !=0 ){
+		      y = y  - 20;
+		      ctx.lineTo( x, y );
+		      ctx.stroke();}
+		  else{
+		     ctx.beginPath();
+             ctx.moveTo(300, 200);
+             ctx.lineTo(300, 220);
+             ctx.stroke();
+		     x = 300 ; 
+		     y = 220 ;
+		 }
+		 }
+		
+
+		 </script>
+  </div>
+  
+  
+  <div id = "divL"> 
+     
+	  <form action = "Stop.php" method ="get" target= "Stop.php" >
+      <button type ="button " onclick =""  style = "left:150px;top:200px;">Stop</button>
+	  </form>
+	  <form action = "Left.php" method ="get" target= "Left.php" >
+	  <button type ="button " onclick =" LLine()" style = "left:50px;top:200px;">Left</button>
+	  </form>
+	   <form action = "Right.php" method ="get" target= "Right.php" >
+	  <button type ="button " onclick ="RLine()"  style = "left:250px;top:200px;">Right</button>
+	  </form>
+	   <form action = "For.php" method ="get" target= "For.php" >
+      <button type ="button " onclick ="fLine()"  style = "left:150px;top:150px;">Forward</button>
+	 </form>
+	  <form action = "Back.php" method ="get" target= "Back.php" >
+	  <button type ="button " onclick ="bLine()"  style = "left:150px;top:250px;">Backward</button>
+	   </form>
+	  <form action = "LastD.php" method ="get" target = "_blank">	   
+	  <button type ="button " onclick ="location.href ='https://LastD.php"style = "left:150px;top:300px; background-color:#EBF5FB ;">LastD</button>
+	  </form>
+	 <div id="mainDiv">
+
+	     <div id="sDiv">
+		 <br>
+		  <label >  distance by defult is 20 , it will save in data base ^_^ </label>
+	    </div>
+      </div>
+  </div>
+   
+   
+ </body>
+
+</html>;
